@@ -15,13 +15,15 @@ words *creatWord(string word, words *synonym) {
 
 void addWord(words *&head, words *node);
 
+void addSynonym(words *&node, const string &synonym);
+
 void printWord(words *node);
 
 void printAllWords(words *head);
 
 words *findWord(words *head, const string &word);
 
-void changeWord(words *&head, const string& oldWord, const string& newWord);
+void changeWord(words *&head, const string &oldWord, const string &newWord);
 
 int main() {
     auto head = new words{"ali", nullptr, nullptr};
@@ -29,7 +31,7 @@ int main() {
         auto temp = creatWord(to_string(i) + "i", nullptr);
         addWord(head, temp);
     }
-    changeWord(head,"ali","arsham");
+    changeWord(head, "ali", "arsham");
     printWord(findWord(head, "arsham"));
 
     return 0;
@@ -82,7 +84,11 @@ words *findWord(words *head, const string &word) {
     return temp;
 }
 
-void changeWord(words *&head, const string& oldWord, const string& newWord) {
-    auto item=findWord(head,oldWord);
-    item->word=newWord;
+void changeWord(words *&head, const string &oldWord, const string &newWord) {
+    auto item = findWord(head, oldWord);
+    item->word = newWord;
+}
+
+void addSynonym(words *&node, const string &synonym) {
+    addWord(node->synonym, creatWord(synonym, nullptr));
 }
