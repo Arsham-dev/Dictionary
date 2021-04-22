@@ -27,13 +27,15 @@ void changeWord(words *&head, const string &oldWord, const string &newWord);
 
 void deleteWord(words *&head, const string &word);
 
+void deleteSynonym(words *&word, const string &synonym);
+
 int main() {
     auto head = new words{"ali", nullptr, nullptr};
     for (int i = 10; i > 0; --i) {
         auto temp = creatWord(to_string(i) + "i", nullptr);
         addWord(head, temp);
     }
-    deleteWord(head,"5i");
+    deleteWord(head, "5i");
     printAllWords(head);
 
     return 0;
@@ -113,8 +115,12 @@ void deleteWord(words *&head, const string &word) {
     if (item2 == nullptr)
         cout << "The word do not exist\n";
     else {
-        item1->next=item2->next;
+        item1->next = item2->next;
         delete item2;
     }
 
+}
+
+void deleteSynonym(words *&word, const string &synonym) {
+    deleteWord(word->synonym, synonym);
 }
