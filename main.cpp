@@ -15,9 +15,11 @@ words *creatWord(string word, words *synonym) {
 
 void printWord(words *node);
 
+void printAllWords(words *head);
 
 int main() {
-
+    auto item=creatWord("ali", nullptr);
+    printAllWords(item);
     return 0;
 }
 
@@ -29,4 +31,12 @@ void printWord(words *node) {
         temp = temp->next;
     }
     cout << endl;
+}
+
+void printAllWords(words *head) {
+    auto temp = head;
+    while (temp != nullptr) {
+        printWord(temp);
+        temp = temp->next;
+    }
 }
