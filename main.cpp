@@ -21,13 +21,16 @@ void printAllWords(words *head);
 
 words *findWord(words *head, const string &word);
 
+void changeWord(words *&head, const string& oldWord, const string& newWord);
+
 int main() {
     auto head = new words{"ali", nullptr, nullptr};
     for (int i = 10; i > 0; --i) {
         auto temp = creatWord(to_string(i) + "i", nullptr);
         addWord(head, temp);
     }
-    printWord(findWord(head,"23242"));
+    changeWord(head,"ali","arsham");
+    printWord(findWord(head, "arsham"));
 
     return 0;
 }
@@ -77,4 +80,9 @@ words *findWord(words *head, const string &word) {
     while (temp != nullptr && temp->word != word)
         temp = temp->next;
     return temp;
+}
+
+void changeWord(words *&head, const string& oldWord, const string& newWord) {
+    auto item=findWord(head,oldWord);
+    item->word=newWord;
 }
