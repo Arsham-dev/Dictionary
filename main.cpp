@@ -29,6 +29,8 @@ void deleteWord(words *&head, const string &word);
 
 void deleteSynonym(words *&word, const string &synonym);
 
+void addListTofWords(words *&head, words *linkList);
+
 int main() {
     auto head = new words{"ali", nullptr, nullptr};
     for (int i = 10; i > 0; --i) {
@@ -123,4 +125,12 @@ void deleteWord(words *&head, const string &word) {
 
 void deleteSynonym(words *&word, const string &synonym) {
     deleteWord(word->synonym, synonym);
+}
+
+void addListTofWords(words *&head, words *linkList) {
+    auto temp = linkList;
+    while(temp!= nullptr){
+        addWord(head,temp);
+        temp=temp->next;
+    }
 }
