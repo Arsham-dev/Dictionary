@@ -25,14 +25,16 @@ words *findWord(words *head, const string &word);
 
 void changeWord(words *&head, const string &oldWord, const string &newWord);
 
+void deleteWord(words *&head, const string &word);
+
 int main() {
     auto head = new words{"ali", nullptr, nullptr};
     for (int i = 10; i > 0; --i) {
         auto temp = creatWord(to_string(i) + "i", nullptr);
         addWord(head, temp);
     }
-    changeWord(head, "ali", "arsham");
-    printWord(findWord(head, "arsham"));
+    deleteWord(head,"5i");
+    printAllWords(head);
 
     return 0;
 }
@@ -91,4 +93,28 @@ void changeWord(words *&head, const string &oldWord, const string &newWord) {
 
 void addSynonym(words *&node, const string &synonym) {
     addWord(node->synonym, creatWord(synonym, nullptr));
+}
+
+void deleteWord(words *&head, const string &word) {
+    if (head == nullptr) {
+        printWord(head);
+        return;
+    }
+    auto item1 = head;
+    if (head->word == word) {
+        head = head->next;
+        return;
+    }
+    auto item2 = item1->next;
+    while (item2 != nullptr && item2->word != word) {
+        item1 = item1->next;
+        item2 = item2->next;
+    }
+    if (item2 == nullptr)
+        cout << "The word do not exist\n";
+    else {
+        item1->next=item2->next;
+        delete item2;
+    }
+
 }
