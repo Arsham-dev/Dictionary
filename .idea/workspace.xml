@@ -11,7 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a49a4b81-bada-421a-bde8-72cc99b59399" name="Default Changelist" comment="" />
+    <list default="true" id="a49a4b81-bada-421a-bde8-72cc99b59399" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +25,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\AVAJANG\CLionProjects\linkList\.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1rCfUiWdtSTzpRm07fZ4yluFIYX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,18 +69,30 @@
       <workItem from="1618644699695" duration="7000" />
       <workItem from="1618779268214" duration="4312000" />
       <workItem from="1618998586763" duration="695000" />
-      <workItem from="1619084471772" duration="2262000" />
+      <workItem from="1619084471772" duration="2624000" />
     </task>
+    <task id="LOCAL-00001" summary="Add words&#10;Add creatWords">
+      <created>1619097652768</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619097652768</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add words&#10;Add creatWords" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add words&#10;Add creatWords" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="11" key="CommitChangelistDialog2" timestamp="1619097470589">
+    <state x="393" y="11" key="CommitChangelistDialog2" timestamp="1619097650406">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1619097470589" />
+    <state x="393" y="11" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1619097650406" />
     <state width="1478" height="258" key="GridCell.Tab.0.bottom" timestamp="1618823014370">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

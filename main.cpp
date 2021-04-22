@@ -13,8 +13,20 @@ words *creatWord(string word, words *synonym) {
     return node;
 }
 
+void printWord(words *node);
+
 
 int main() {
 
     return 0;
+}
+
+void printWord(words *node) {
+    cout << "Word: " << node->word << ": ";
+    words *temp = node->synonym;
+    while (temp != nullptr) {
+        cout << temp->word << ", ";
+        temp = temp->next;
+    }
+    cout << endl;
 }
