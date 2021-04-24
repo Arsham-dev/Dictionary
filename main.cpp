@@ -1,5 +1,6 @@
 #include<iostream>
 #include <utility>
+#include <fstream>
 
 using namespace std;
 struct words {
@@ -33,15 +34,19 @@ void addListTofWords(words *&head, words *linkList);
 
 void deleteListOfWords(words *&head, words *linkList);
 
-int main() {
-    auto head = new words{"ali", nullptr, nullptr};
-    for (int i = 10; i > 0; --i) {
-        auto temp = creatWord(to_string(i) + "i", nullptr);
-        addWord(head, temp);
-    }
-    deleteWord(head, "5i");
-    printAllWords(head);
+words *creatWordWithArray(string str[], int size);
 
+string wordsToString(words *node);
+
+void writeInFile(words *head);
+
+int countWord(const string &str);
+
+words *readFromFile(const string &address);
+
+void stringToArray(string str, string ans[], int size);
+
+int main() {
     return 0;
 }
 
@@ -143,4 +148,67 @@ void deleteListOfWords(words *&head, words *linkList) {
         deleteWord(head, temp->word);
         temp = temp->next;
     }
+}
+
+words *creatWordWithArray(string str[], int size) {
+    auto node = creatWord(str[0], nullptr);
+    for (int i = 1; i < size; ++i)
+        addSynonym(node, str[i]);
+
+    return node;
+}
+
+string wordsToString(words *node) {
+    string ans = node->word + " ";
+    auto temp = node->synonym;
+    while (temp != nullptr) {
+        ans += temp->word + " ";
+        temp = temp->next;
+    }
+    return ans;
+}
+
+void writeInFile(words *head) {
+    ofstream writer("data.txt");
+    auto temp = head;
+    while (temp != nullptr) {
+        writer << wordsToString(temp) << endl;
+        temp = temp->next;
+    }
+    writer.close();
+}
+
+int countWord(const string &str) {
+    int ans = 0;
+    for (char s:str)
+        if (s == ' ')
+            ans++;
+    return ans;
+}
+
+void stringToArray(string str, string ans[], int size) {
+    int length = 0;
+    for (char i : str)
+        if (i == ' ')
+            length++;
+
+    for (int i = 0; i < size; ++i) {
+        ans[i] = str.substr(0, str.find(' '));
+        str = str.substr(str.find(' '), str.size() - str.find(' '));
+    }
+
+}
+
+words *readFromFile(const string &address) {
+    words *head = nullptr;
+    string line;
+    ifstream read(address);
+    int size = countWord(line);
+    while (getline(read, line)) {
+        string word[size];
+        stringToArray(line, word, size);
+        addWord(head, creatWordWithArray(word, size));
+    }
+    return head;
+
 }

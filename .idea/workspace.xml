@@ -11,7 +11,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a49a4b81-bada-421a-bde8-72cc99b59399" name="Default Changelist" comment="" />
+    <list default="true" id="a49a4b81-bada-421a-bde8-72cc99b59399" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +70,8 @@
       <workItem from="1618644699695" duration="7000" />
       <workItem from="1618779268214" duration="4312000" />
       <workItem from="1618998586763" duration="695000" />
-      <workItem from="1619084471772" duration="9274000" />
+      <workItem from="1619084471772" duration="9414000" />
+      <workItem from="1619111299681" duration="5643000" />
     </task>
     <task id="LOCAL-00001" summary="Add words&#10;Add creatWords">
       <created>1619097652768</created>
@@ -139,11 +143,31 @@
       <option name="project" value="LOCAL" />
       <updated>1619111015842</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add deleteListOfWords">
+      <created>1619111116494</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619111116494</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add words&#10;Add creatWords" />
@@ -156,33 +180,34 @@
     <MESSAGE value="Add deleteWord" />
     <MESSAGE value="Add deleteSynonym" />
     <MESSAGE value="Add addListTofWords" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add addListTofWords" />
+    <MESSAGE value="Add deleteListOfWords" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deleteListOfWords" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="483" y="18" key="CommitChangelistDialog2" timestamp="1619111014998">
+    <state x="483" y="18" key="CommitChangelistDialog2" timestamp="1619111115754">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="483" y="18" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1619111014998" />
+    <state x="483" y="18" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1619111115754" />
     <state x="100" y="100" width="1336" height="624" key="DiffContextDialog" timestamp="1619102002670">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="100" y="100" width="1336" height="624" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1619102002670" />
-    <state width="1478" height="208" key="GridCell.Tab.0.bottom" timestamp="1619101818582">
+    <state width="1478" height="208" key="GridCell.Tab.0.bottom" timestamp="1619111157192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619101818582" />
-    <state width="1478" height="208" key="GridCell.Tab.0.center" timestamp="1619101818582">
+    <state width="1478" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1619111157192" />
+    <state width="1478" height="208" key="GridCell.Tab.0.center" timestamp="1619111157192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1619101818582" />
-    <state width="1478" height="208" key="GridCell.Tab.0.left" timestamp="1619101818582">
+    <state width="1478" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1619111157192" />
+    <state width="1478" height="208" key="GridCell.Tab.0.left" timestamp="1619111157192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1619101818582" />
-    <state width="1478" height="208" key="GridCell.Tab.0.right" timestamp="1619101818582">
+    <state width="1478" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1619111157192" />
+    <state width="1478" height="208" key="GridCell.Tab.0.right" timestamp="1619111157192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1619101818582" />
+    <state width="1478" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1619111157192" />
     <state width="1478" height="258" key="GridCell.Tab.1.bottom" timestamp="1618823014370">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -199,13 +224,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1478" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1618823014370" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1619084471793">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1619111299481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1619084471793" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1619099099050">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1619111299481" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1619243877858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1619099099050" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1619243877858" />
   </component>
 </project>
