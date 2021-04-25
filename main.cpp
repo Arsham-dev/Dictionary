@@ -47,6 +47,9 @@ words *readFromFile(const string &address);
 void stringToArray(string str, string ans[], int size);
 
 int main() {
+    words *head = nullptr;
+    head = readFromFile("data.txt");
+    printAllWords(head);
     return 0;
 }
 
@@ -187,14 +190,9 @@ int countWord(const string &str) {
 }
 
 void stringToArray(string str, string ans[], int size) {
-    int length = 0;
-    for (char i : str)
-        if (i == ' ')
-            length++;
-
     for (int i = 0; i < size; ++i) {
         ans[i] = str.substr(0, str.find(' '));
-        str = str.substr(str.find(' '), str.size() - str.find(' '));
+        str = str.substr(str.find(' ')+1, str.size() - str.find(' '));
     }
 
 }
@@ -203,11 +201,14 @@ words *readFromFile(const string &address) {
     words *head = nullptr;
     string line;
     ifstream read(address);
+    bool check=read.is_open();
+    getline(read, line);
     int size = countWord(line);
-    while (getline(read, line)) {
+    while (!read.eof()) {
         string word[size];
         stringToArray(line, word, size);
         addWord(head, creatWordWithArray(word, size));
+        getline(read, line);
     }
     return head;
 
