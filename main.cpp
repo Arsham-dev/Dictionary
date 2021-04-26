@@ -50,6 +50,12 @@ void menuPrint();
 
 void addWordPrint();
 
+void addSynonymPrint();
+
+void findWordPrint();
+
+void deleteWordPrint();
+
 int main() {
     words *head = nullptr;
 
@@ -59,9 +65,10 @@ int main() {
 void menuPrint() {
     cout << "1-Add word" << endl;
     cout << "2-Add synonym" << endl;
-    cout << "3-Delete word" << endl;
-    cout << "4-Delete synonym" << endl;
-    cout << "5-Exit" << endl;
+    cout << "3-Find word" << endl;
+    cout << "4-Delete word" << endl;
+    cout << "5-Delete synonym" << endl;
+    cout << "6-Exit" << endl;
 }
 
 void addWordPrint(words *&head) {
@@ -81,6 +88,32 @@ void addWordPrint(words *&head) {
 
 }
 
+void addSynonymPrint(words *&head) {
+    cout << "Enter word" << endl;
+    string word;
+    int len;
+    cin >> word;
+    cout << "Enter number of synonym" << endl;
+    auto temp = findWord(head, word);
+    cin >> len;
+    string t;
+    for (int i = 0; i < len; ++i) {
+        cin >> t;
+        addSynonym(temp, t);
+    }
+    addWord(head, temp);
+}
+
+void findWordPrint(words *&head) {
+    cout << "Enter word" << endl;
+    string word;
+    cin >> word;
+    auto temp = findWord(head, word);
+    if (temp == nullptr)
+        cout << "This word does not exist" << endl;
+    else
+        printWord(temp);
+}
 
 void printWord(words *node) {
     if (node == nullptr) {
