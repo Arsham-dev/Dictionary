@@ -48,17 +48,61 @@ void stringToArray(string str, string ans[], int size);
 
 void menuPrint();
 
-void addWordPrint();
+void addWordPrint(words *&head);
 
-void addSynonymPrint();
+void addSynonymPrint(words *&head);
 
-void findWordPrint();
+void findWordPrint(words *&head);
 
-void deleteWordPrint();
+void deleteWordPrint(words *&head);
+
+void deleteSynonymPrint(words *&head);
+
+void changeNameWordPrint(words *&head);
+
+void readFromFilePrint(words *&head);
 
 int main() {
     words *head = nullptr;
+    int command;
+    bool check = true;
+    while (check) {
+        menuPrint();
+        cin >> command;
+        switch (command) {
+            case 1:
+                addWordPrint(head);
+                break;
+            case 2:
+                addSynonymPrint(head);
+                break;
+            case 3:
+                findWordPrint(head);
+                break;
+            case 4:
+                deleteWordPrint(head);
+                break;
+            case 5:
+                deleteSynonymPrint(head);
+                break;
+            case 6:
+                printAllWords(head);
+                break;
+            case 7:
+                changeNameWordPrint(head);
+                break;
+            case 8:
+                writeInFile(head);
+                break;
+            case 9:
+                readFromFilePrint(head);
+                break;
+            case 10:
+                check= false;
+                break;
 
+        }
+    }
     return 0;
 }
 
@@ -68,7 +112,11 @@ void menuPrint() {
     cout << "3-Find word" << endl;
     cout << "4-Delete word" << endl;
     cout << "5-Delete synonym" << endl;
-    cout << "6-Exit" << endl;
+    cout << "6-Print all word" << endl;
+    cout << "7-Change name" << endl;
+    cout << "8-Write in file" << endl;
+    cout << "9-Read from file" << endl;
+    cout << "10-Exit" << endl;
 }
 
 void addWordPrint(words *&head) {
@@ -81,6 +129,7 @@ void addWordPrint(words *&head) {
     cin >> len;
     string t;
     for (int i = 0; i < len; ++i) {
+        cout<<"Enter synonym"<<endl;
         cin >> t;
         addSynonym(temp, t);
     }
@@ -98,6 +147,7 @@ void addSynonymPrint(words *&head) {
     cin >> len;
     string t;
     for (int i = 0; i < len; ++i) {
+        cout<<"Enter synonym"<<endl;
         cin >> t;
         addSynonym(temp, t);
     }
@@ -113,6 +163,49 @@ void findWordPrint(words *&head) {
         cout << "This word does not exist" << endl;
     else
         printWord(temp);
+}
+
+void deleteWordPrint(words *&head) {
+    cout << "Enter word" << endl;
+    string word;
+    cin >> word;
+    deleteWord(head, word);
+}
+
+void deleteSynonymPrint(words *&head) {
+    cout << "Enter word" << endl;
+    string word;
+    cin >> word;
+    auto temp = findWord(head, word);
+    printWord(temp);
+    int len;
+    cout << "Enter number of synonym" << endl;
+    cin >> len;
+    string t;
+    for (int i = 0; i < len; ++i) {
+        cin >> t;
+        deleteSynonym(temp, t);
+    }
+}
+
+void changeNameWordPrint(words *&head) {
+    cout << "Enter word" << endl;
+    string word;
+    cin >> word;
+    auto temp = findWord(head, word);
+    if (temp == nullptr)
+        return;
+    cout << "Enter new name" << endl;
+    cin >> word;
+    changeWord(head, temp->word, word);
+
+}
+
+void readFromFilePrint(words *&head) {
+    cout << "Enter address" << endl;
+    string address;
+    cin >> address;
+    addListTofWords(head,readFromFile(address));
 }
 
 void printWord(words *node) {
