@@ -48,7 +48,7 @@ void stringToArray(string str, string ans[], int size);
 
 void menuPrint();
 
-
+void addWordPrint();
 
 int main() {
     words *head = nullptr;
@@ -62,6 +62,23 @@ void menuPrint() {
     cout << "3-Delete word" << endl;
     cout << "4-Delete synonym" << endl;
     cout << "5-Exit" << endl;
+}
+
+void addWordPrint(words *&head) {
+    cout << "Enter word" << endl;
+    string word;
+    int len;
+    cin >> word;
+    cout << "Enter number of synonym" << endl;
+    auto temp = creatWord(word, nullptr);
+    cin >> len;
+    string t;
+    for (int i = 0; i < len; ++i) {
+        cin >> t;
+        addSynonym(temp, t);
+    }
+    addWord(head, temp);
+
 }
 
 
