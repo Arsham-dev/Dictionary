@@ -46,12 +46,24 @@ words *readFromFile(const string &address);
 
 void stringToArray(string str, string ans[], int size);
 
+void menuPrint();
+
+
+
 int main() {
     words *head = nullptr;
-    head = readFromFile("data.txt");
-    printAllWords(head);
+
     return 0;
 }
+
+void menuPrint() {
+    cout << "1-Add word" << endl;
+    cout << "2-Add synonym" << endl;
+    cout << "3-Delete word" << endl;
+    cout << "4-Delete synonym" << endl;
+    cout << "5-Exit" << endl;
+}
+
 
 void printWord(words *node) {
     if (node == nullptr) {
@@ -192,7 +204,7 @@ int countWord(const string &str) {
 void stringToArray(string str, string ans[], int size) {
     for (int i = 0; i < size; ++i) {
         ans[i] = str.substr(0, str.find(' '));
-        str = str.substr(str.find(' ')+1, str.size() - str.find(' '));
+        str = str.substr(str.find(' ') + 1, str.size() - str.find(' '));
     }
 
 }
@@ -201,7 +213,7 @@ words *readFromFile(const string &address) {
     words *head = nullptr;
     string line;
     ifstream read(address);
-    bool check=read.is_open();
+    bool check = read.is_open();
     getline(read, line);
     int size = countWord(line);
     while (!read.eof()) {
