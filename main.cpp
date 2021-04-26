@@ -154,7 +154,7 @@ void addSynonymPrint(words *&head) {
         cin >> t;
         addSynonym(temp, t);
     }
-    addWord(head, temp);
+
 }
 
 void findWordPrint(words *&head) {
@@ -180,12 +180,17 @@ void deleteSynonymPrint(words *&head) {
     string word;
     cin >> word;
     auto temp = findWord(head, word);
+    if (temp == nullptr) {
+        cout << "This word does not exist" << endl;
+        return;
+    }
     printWord(temp);
     int len;
     cout << "Enter number of synonym" << endl;
     cin >> len;
     string t;
     for (int i = 0; i < len; ++i) {
+        cout << "Enter synonym" << endl;
         cin >> t;
         deleteSynonym(temp, t);
     }
@@ -196,8 +201,10 @@ void changeNameWordPrint(words *&head) {
     string word;
     cin >> word;
     auto temp = findWord(head, word);
-    if (temp == nullptr)
+    if (temp == nullptr) {
+        cout << "This word does not exist" << endl;
         return;
+    }
     cout << "Enter new name" << endl;
     cin >> word;
     changeWord(head, temp->word, word);
@@ -208,7 +215,8 @@ void readFromFilePrint(words *&head) {
     cout << "Enter address" << endl;
     string address;
     cin >> address;
-    addListTofWords(head, readFromFile(address));
+    auto temp = readFromFile(address);
+    addListTofWords(head, temp);
 }
 
 void printWord(words *node) {
@@ -315,7 +323,6 @@ words *creatWordWithArray(string str[], int size) {
     auto node = creatWord(str[0], nullptr);
     for (int i = 1; i < size; ++i)
         addSynonym(node, str[i]);
-
     return node;
 }
 
