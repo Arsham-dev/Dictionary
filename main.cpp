@@ -98,8 +98,11 @@ int main() {
                 readFromFilePrint(head);
                 break;
             case 10:
-                check= false;
+                check = false;
+                cout << "Bye" << endl;
                 break;
+            default:
+                cout << "Invalid\n Enter a number" << endl;
 
         }
     }
@@ -129,7 +132,7 @@ void addWordPrint(words *&head) {
     cin >> len;
     string t;
     for (int i = 0; i < len; ++i) {
-        cout<<"Enter synonym"<<endl;
+        cout << "Enter synonym" << endl;
         cin >> t;
         addSynonym(temp, t);
     }
@@ -147,7 +150,7 @@ void addSynonymPrint(words *&head) {
     cin >> len;
     string t;
     for (int i = 0; i < len; ++i) {
-        cout<<"Enter synonym"<<endl;
+        cout << "Enter synonym" << endl;
         cin >> t;
         addSynonym(temp, t);
     }
@@ -205,7 +208,7 @@ void readFromFilePrint(words *&head) {
     cout << "Enter address" << endl;
     string address;
     cin >> address;
-    addListTofWords(head,readFromFile(address));
+    addListTofWords(head, readFromFile(address));
 }
 
 void printWord(words *node) {
@@ -356,7 +359,6 @@ words *readFromFile(const string &address) {
     words *head = nullptr;
     string line;
     ifstream read(address);
-    bool check = read.is_open();
     getline(read, line);
     int size = countWord(line);
     while (!read.eof()) {
