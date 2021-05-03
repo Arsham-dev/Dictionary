@@ -1,6 +1,6 @@
 #include<iostream>
-#include <utility>
 #include <fstream>
+#include <string>
 
 using namespace std;
 struct words {
@@ -354,7 +354,7 @@ int countWord(const string &str) {
     return ans;
 }
 
-void stringToArray(string str, string ans[], int size) {
+void stringToArray(string str, string *ans, int size) {
     for (int i = 0; i < size; ++i) {
         ans[i] = str.substr(0, str.find(' '));
         str = str.substr(str.find(' ') + 1, str.size() - str.find(' '));
